@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ocean Waves - Joyería</title>
+
+  <!-- Animate.css para animaciones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Tu archivo de estilos -->
+  <link rel="stylesheet" href="joye.css" />
+</head>
+
+<body>
+  <header>
+    <img src="IMAGEN/22.png" alt="Ocean Waves Logo" class="logo" />
+    <nav>
+ 
+      <ul class="nav-links">
+              <p>
+      <a href="https://www.instagram.com/oceanwaves_coatza?igsh=bDY5aXkyZGpweXN5" target="_blank">
+        <i class="fab fa-instagram"
+        style="font-size: 24px; color: #ffffff"></i>
+      </a>
+    </p>
+        <li><a href="AR.html">Inicio</a></li>
+        <li><a href="ropa.html">Ropa</a></li>
+        <li><a href="chanclas.html">Calzado</a></li>
+        <div class="carrito-icono">
+          <a href="carrito.html">🛒 <span id="contador-carrito">0</span></a>
+        </div>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="bienvenida">
+    <img src="IMAGEN/1.png" alt="Bienvenida" />
+    <h1>Bienvenida al apartado de Joyería</h1>
+    <p>Descubre el lujo de las joyas y crea estilos únicos.</p>
+  </section>
+
+  <section id="joyeria" class="productos">
+    <h2>Joyería Marina</h2>
+
+    <div class="producto">
+      <img src="IMAGEN/PULSERRA.jpg" alt="Pulsera con Conchitas" />
+      <h3>Pulsera con Conchitas</h3>
+      <p>$120 MXN</p>
+      <button onclick="confirmarAgregar(this, 'Pulsera con Conchitas', 120)">Agregar al carrito</button>
+      <div class="mensaje-agregado animate__animated" style="display:none; margin-top: 10px;">
+        ✅ Agregado al carrito
+      </div>
+    </div>
+
+    <div class="producto">
+      <img src="IMAGEN/ima.jpg" alt="Aretes de estrella marina" />
+      <h3>Aretes de estrella marina</h3>
+      <p>$150 MXN</p>
+      <button onclick="confirmarAgregar(this, 'Aretes de estrella marina', 150)">Agregar al carrito</button>
+      <div class="mensaje-agregado animate__animated" style="display:none; margin-top: 10px;">
+        ✅ Agregado al carrito
+      </div>
+    </div>
+
+    <div class="producto">
+      <img src="IMAGEN/ima2.jpg" alt="Collar piedritas doble" />
+      <h3>Collar piedritas doble</h3>
+      <p>$250 MXN</p>
+      <button onclick="confirmarAgregar(this, 'Collar piedritas doble', 250)">Agregar al carrito</button>
+      <div class="mensaje-agregado animate__animated" style="display:none; margin-top: 10px;">
+        ✅ Agregado al carrito
+      </div>
+    </div>
+
+    <div class="producto">
+      <img src="IMAGEN/ima3.jpg" alt="Juego de pulsera y anillo dorados" />
+      <h3>Juego de pulsera y anillo dorados</h3>
+      <p>$450 MXN</p>
+      <button onclick="confirmarAgregar(this, 'Juego de pulsera y anillo dorados', 450)">Agregar al carrito</button>
+      <div class="mensaje-agregado animate__animated" style="display:none; margin-top: 10px;">
+        ✅ Agregado al carrito
+      </div>
+    </div>
+
+    <div class="producto">
+      <img src="IMAGEN/ima4.jpg" alt="Charms marinos" />
+      <h3>Charms marinos</h3>
+      <p>$150 MXN</p>
+      <button onclick="confirmarAgregar(this, 'Charms marinos', 150)">Agregar al carrito</button>
+      <div class="mensaje-agregado animate__animated" style="display:none; margin-top: 10px;">
+        ✅ Agregado al carrito
+      </div>
+    </div>
+  </section>
+
+  <!-- Script para confirmar y mostrar animación -->
+  <script>
+    function confirmarAgregar(boton, nombre, precio) {
+      if (confirm(`¿Desea añadir "${nombre}" al carrito por $${precio} MXN?`)) {
+        agregarAlCarrito(nombre, precio);
+
+        const mensaje = boton.parentElement.querySelector(".mensaje-agregado");
+        mensaje.style.display = "block";
+        mensaje.classList.remove("animate__fadeOut");
+        mensaje.classList.add("animate__fadeIn");
+
+        setTimeout(() => {
+          mensaje.classList.remove("animate__fadeIn");
+          mensaje.classList.add("animate__fadeOut");
+          setTimeout(() => {
+            mensaje.style.display = "none";
+          }, 1000);
+        }, 2000);
+      }
+    }
+  </script>
+
+  <!-- Script que maneja el carrito (debes tener este archivo en tu carpeta) -->
+  <script src="CR.js"></script>
+</body>
+</html>

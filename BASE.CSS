@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Pacifico&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #e5e0dd;
+    color: #000000;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header y navegación */
+header {
+    background-color: #978175;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.logo {
+    height: 60px;
+    max-width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    align-items: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+}
+
+/* Sección de bienvenida */
+.bienvenida {
+    text-align: center;
+    padding: 2em;
+    background-color: #f9f7f6;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.bienvenida img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1em;
+}
+
+.bienvenida h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5em;
+    color: #4e3b2f;
+    margin-bottom: 0.3em;
+}
+
+.bienvenida h2 {
+    font-size: 1.8em;
+    color: #695247;
+    font-weight: 700;
+    margin-bottom: 0.6em;
+}
+
+.bienvenida p {
+    font-size: 1.1em;
+    color: #333;
+    margin: 0.5em 0;
+}
+
+/* Productos destacados */
+.productos.destacados {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 2em;
+}
+
+.productos.destacados .producto {
+    width: 250px;
+    background-color: #f5f5f5;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.productos.destacados .producto img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.producto h3 {
+    margin: 10px 0;
+    color: #333;
+}
+
+.producto p {
+    font-size: 0.95em;
+}
+
+.ver-mas {
+    display: inline-block;
+    margin-top: 10px;
+    color: #1e2ca2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Carrito */
+.carrito-icono {
+    position: relative;
+    font-size: 1.5em;
+    margin-right: 1em;
+}
+
+#contador-carrito {
+    background-color: red;
+    color: white;
+    font-size: 0.8em;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #978175;
+    color: white;
+    margin-top: 2em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header, nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .productos.destacados {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .productos.destacados .producto {
+        width: 90%;
+    }
+
+    .bienvenida img {
+        max-height: 250px;
+    }
+}

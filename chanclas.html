@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ocean Waves - Calzado</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="calza.css" />
+</head>
+
+<body>
+  <header>
+    <img src="IMAGEN/22.png" alt="Ocean Waves Logo" class="logo" />
+    <nav>
+      <ul class="nav-links">
+            <p>
+      <a href="https://www.instagram.com/oceanwaves_coatza?igsh=bDY5aXkyZGpweXN5" target="_blank">
+        <i class="fab fa-instagram"
+        style="font-size: 24px; color: #ffffff"></i>
+      </a>
+    </p>
+        <li><a href="AR.html">Inicio</a></li>
+        <li><a href="joyeriaa.html">Joyería</a></li>
+        <li><a href="ropa.html">Ropa</a></li>
+          <div class="carrito-icono">
+          <a href="carrito.html">🛒 <span id="contador-carrito">0</span></a>
+        </div>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="bienvenida">
+    <img src="IMAGEN/1.png" alt="Bienvenida" />
+    <h1>Bienvenida al apartado de Calzado</h1>
+    <p>Combina el calzado con tus outfits de ropa y crea estilos únicos.</p>
+  </section>
+
+  <section id="calzado" class="productos">
+    <h2>Chanclas y Sandalias</h2>
+
+    <div class="producto">
+      <img src="IMAGEN/CHANCLAS.jpg" alt="Chanclas con Perlas" />
+      <h3>Chanclas con Perlas</h3>
+      <p>$180 MXN</p>
+      <button onclick="confirmarAgregar(this, 'Chanclas con Perlas', 180)">Agregar al carrito</button>
+      <div class="mensaje-agregado animate__animated" style="display:none;">✅ Agregado al carrito</div>
+    </div>
+
+    <div class="producto">
+      <img src="IMAGEN/1.jpg" alt="Chanclas birkin blancas" />
+      <h3>Chanclas birkin blancas</h3>
+      <p>$280 MXN</p>
+      <button onclick="confirmarAgregar(this, 'Chanclas birkin blancas', 280)">Agregar al carrito</button>
+      <div class="mensaje-agregado animate__animated" style="display:none;">✅ Agregado al carrito</div>
+    </div>
+
+    <div class="producto">
+      <img src="IMAGEN/2.jpg" alt="Chanclas con conchitas" />
+      <h3>Chanclas con conchitas</h3>
+      <p>$250 MXN</p>
+      <button onclick="confirmarAgregar(this, 'Chanclas con conchitas', 250)">Agregar al carrito</button>
+      <div class="mensaje-agregado animate__animated" style="display:none;">✅ Agregado al carrito</div>
+    </div>
+
+    <div class="producto">
+      <img src="IMAGEN/3.jpg" alt="Heels blancos" />
+      <h3>Heels blancos</h3>
+      <p>$380 MXN</p>
+      <button onclick="confirmarAgregar(this, 'Heels blancos', 380)">Agregar al carrito</button>
+      <div class="mensaje-agregado animate__animated" style="display:none;">✅ Agregado al carrito</div>
+    </div>
+
+    <div class="producto">
+      <img src="IMAGEN/5.jpg" alt="Chanclas blancas" />
+      <h3>Chanclas blancas</h3>
+      <p>$180 MXN</p>
+      <button onclick="confirmarAgregar(this, 'Chanclas blancas', 180)">Agregar al carrito</button>
+      <div class="mensaje-agregado animate__animated" style="display:none;">✅ Agregado al carrito</div>
+    </div>
+  </section>
+
+  <!-- MODAL DEL CARRITO -->
+  <div id="carrito-modal" class="modal">
+    <div class="modal-contenido animate__animated animate__fadeInRight">
+      <span class="cerrar" onclick="cerrarCarrito()">&times;</span>
+      <h2>Tu Carrito</h2>
+      <div id="contenido-carrito"></div>
+      <button onclick="comprar()">Comprar</button>
+    </div>
+  </div>
+
+  <!-- SCRIPT para confirmar y mostrar mensaje -->
+  <script>
+    function confirmarAgregar(boton, nombre, precio) {
+      if (confirm(`¿Desea añadir "${nombre}" al carrito por $${precio} MXN?`)) {
+        agregarAlCarrito(nombre, precio);
+
+        const mensaje = boton.parentElement.querySelector(".mensaje-agregado");
+        mensaje.style.display = "block";
+        mensaje.classList.remove("animate__fadeOut");
+        mensaje.classList.add("animate__fadeIn");
+
+        setTimeout(() => {
+          mensaje.classList.remove("animate__fadeIn");
+          mensaje.classList.add("animate__fadeOut");
+          setTimeout(() => {
+            mensaje.style.display = "none";
+          }, 1000);
+        }, 2000);
+      }
+    }
+
+    function mostrarCarrito() {
+      document.getElementById("carrito-modal").style.display = "block";
+    }
+
+    function cerrarCarrito() {
+      document.getElementById("carrito-modal").style.display = "none";
+    }
+  </script>
+
+  <script src="CR.js"></script>
+</body>
+</html>
